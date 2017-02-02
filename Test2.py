@@ -40,7 +40,7 @@ GPIO.setup(led1, GPIO.OUT)
 GPIO.setup(led2, GPIO.OUT)
 #----------------------------------------
 '''Andere variabelen'''
-Grens_afstand = 27
+Grens_afstand = 29
 achteruit_tijd = 0.5
 omdraai_tijd = 0.8
 Uturn_tijd = 0.7
