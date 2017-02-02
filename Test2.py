@@ -38,7 +38,7 @@ GPIO.setup(led1, GPIO.OUT)
 GPIO.setup(led2, GPIO.OUT)
 #----------------------------------------
 '''Andere variabelen'''
-Grens_afstand = 24
+Grens_afstand = 14
 achteruit_tijd = 0.5
 omdraai_tijd = 0.5
 Uturn_tijd = 0.7
@@ -159,22 +159,25 @@ def RijdtoverZwart():
 		return False
 #-------------------------------------
 '''Sirene maken'''
-def Sirene(self):
+def Sirene():
 	GPIO.output(led1, 1)
+	Links()
 	time.sleep(0.5)
 	GPIO.output(led1, 0)
 	GPIO.output(led2, 1)
+	Links()
 	time.sleep(0.5)
 	GPIO.output(led2, 0)
+	Links()
 #---------------------------------------
-'''Gevonden!'''
+'''Gevonden!
 def Gevonden():
 	if RijdtoverZwart == True:
 		Sirene()
-		Links()
+		
 		time.sleep(rondje_draaien)
 		Rechtdoor()
-		time.sleep(1)
+		time.sleep(1)'''
 
 
 '''Try-line om de volgorde van handelen te vertellen'''
@@ -185,13 +188,12 @@ try:
     	while True:
 		Vooruit()
         	time.sleep(0.1)
-        	if Dichtbij(Grens_afstand):
+		if RijdtoverZwart():
+			stop()
+			Sirene()
+		elif Dichtbij(Grens_afstand):
             		stop()
             		Uturn()
-		elif RijdtoverZwart():
-			stop()
-			Gevonden()
-			
 	# If you press CTRL+C, cleanup and stop
 except KeyboardInterrupt:
 	GPIO.cleanup()
