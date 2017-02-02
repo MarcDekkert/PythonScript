@@ -119,7 +119,7 @@ def Meting():
 		buffer.pop(0)
 	
 	total = 0
-	for i in range(0, len(buffer)):
+	for i in range[0, len(buffer)]:
 		total += buffer(i)
 	
 	
