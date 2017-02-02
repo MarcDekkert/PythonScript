@@ -92,7 +92,12 @@ def Rechts():
 	pwmpinBachteruit.ChangeDutyCycle(DutyCycleB)
 #--------------------------------------
 '''Meting maken'''
+
+
+buffer = []
+
 def Meting():
+	global buffer
 	GPIO.output(echoOutput, True)
 	time.sleep(0.00001)
 	GPIO.output(echoOutput, False)
@@ -108,8 +113,17 @@ def Meting():
 
     	ElapsedTime = StopTime - StartTime
     	Afstand = (ElapsedTime * 34300)/2
-
-    	return Afstand
+	
+	buffer.append(Afstand)
+	if (len(buffer) > 6):
+		buffer.pop(0)
+	
+	total = 0
+	for i in range(0, len(buffer)):
+		total += buffer(i)
+	
+	
+    	return total / len(buffer)
 #-------------------------------------
 '''Functie die true geeft als de sensor een 1 geeft'''
 def Dichtbij(localGrens_afstand):
