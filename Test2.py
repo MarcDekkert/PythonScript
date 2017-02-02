@@ -142,7 +142,6 @@ def Uturn():
 	Achteruit()
 	time.sleep(achteruit_tijd)
 	stop()
-
 	#Naar rechts
     	print("Rechts")
     	Rechts()
@@ -180,6 +179,7 @@ def Sirene():
 	time.sleep(0.5)
 	GPIO.output(led2, 0)
 	Links()
+	time.sleep(omdraai_tijd)
 #---------------------------------------
 '''Try-line om de volgorde van handelen te vertellen'''
 try:
@@ -193,7 +193,6 @@ try:
 			stop()
 			Sirene()
 			break
-			stop()
 		elif Dichtbij(Grens_afstand):
             		stop()
             		Uturn()
