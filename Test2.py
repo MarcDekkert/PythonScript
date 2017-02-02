@@ -44,7 +44,7 @@ Grens_afstand = 29
 achteruit_tijd = 0.5
 omdraai_tijd = 0.8
 Uturn_tijd = 0.7
-Rondje_draaien = 8
+Rondje_draaien = 6
 #----------------------------------------
 '''GPIO naar PWM-software naar frequentie in Hertz'''
 pwmpinAvooruit = GPIO.PWM(pinAvooruit, Frequency)
