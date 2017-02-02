@@ -36,7 +36,7 @@ GPIO.setup(lichtinput, GPIO.IN)
 '''Andere variabelen'''
 Grens_afstand = 25
 achteruit_tijd = 0.5
-omdraai_tijd = 0.4
+omdraai_tijd = 0.8
 Uturn_tijd = 0.7
 Rondje_draaien = 8
 counter = 0
