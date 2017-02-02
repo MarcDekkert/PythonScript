@@ -40,11 +40,12 @@ GPIO.setup(led1, GPIO.OUT)
 GPIO.setup(led2, GPIO.OUT)
 #----------------------------------------
 '''Andere variabelen'''
-Grens_afstand = 27
+Grens_afstand = 25
 achteruit_tijd = 0.5
 omdraai_tijd = 0.8
 Uturn_tijd = 0.7
 Rondje_draaien = 8
+counter = 0
 #----------------------------------------
 '''GPIO naar PWM-software naar frequentie in Hertz'''
 pwmpinAvooruit = GPIO.PWM(pinAvooruit, Frequency)
@@ -197,6 +198,24 @@ try:
 		elif Dichtbij(Grens_afstand):
             		stop()
             		Uturn()
+	 
+	counter+=1
+        print "counter is nu 1 " + str(counter)
+	if counter == 4:
+		print "HowNear before increment = " + str(Grens_afstand)
+            	Grens_afstand+=5
+            	print "counter is nu 4 = HowNear+=1 " + str(counter)
+            	print "HowNear after increment = " + str(Grens_afstand)
+
+            	if Grens_afstand == 45:
+                	Grens_afstand-= 5;
+        	if counter == 5:
+            		print "counter is 5 , dus nu weer 1 " + str(counter)
+            		counter = 1
+            		print "counter moet nu weer 1 zijn " + str(counter)
+        # -----
+
+        time.sleep(0.50)
 	# If you press CTRL+C, cleanup and stop
 except KeyboardInterrupt:
 	GPIO.cleanup()
