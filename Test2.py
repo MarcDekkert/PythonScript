@@ -152,8 +152,10 @@ def Uturn():
 '''Witte stip vinden'''
 def RijdtoverZwart():
 	if GPIO.input(lichtinput) == 0:
+		print("Rijdt over zwart oppervlak")
 		return True
 	else:
+		print("Rijdt over wit oppervlak")
 		return False
 #-------------------------------------
 '''Sirene maken'''
