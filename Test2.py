@@ -115,7 +115,7 @@ def Meting():
     	Afstand = (ElapsedTime * 34300)/2
 	
 	buffer.append(Afstand)
-	if (len(buffer) > 6):
+	if (len(buffer) > 3):
 		buffer.pop(0)
 	
 	total = 0
