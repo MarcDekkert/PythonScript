@@ -20,7 +20,7 @@ led2 = 23
 '''Frequentie van de wielen'''
 Frequency = 24
 '''Percentage dat de banden gebruikt worden'''
-DutyCycleA = 31
+DutyCycleA = 32
 DutyCycleB = 30
 Stop = float(0.0000000)
 #----------------------------------------
@@ -174,7 +174,7 @@ def Gevonden():
 		Links()
 		time.sleep(rondje_draaien)
 		Rechtdoor()
-		time.sleep(0.7)
+		time.sleep(1)
 
 
 '''Try-line om de volgorde van handelen te vertellen'''
@@ -190,7 +190,6 @@ try:
             		Uturn()
 		elif RijdtoverZwart():
 			stop()
-			Sirene()
 			Gevonden()
 			
 	# If you press CTRL+C, cleanup and stop
