@@ -24,15 +24,17 @@ DutyCycleA = 29
 DutyCycleB = 31
 Stop = float(0.0000000)
 #----------------------------------------
-'''Set the GPIO Pin mode to be Output'''
+'''Set the GPIO Pins naar hun modes'''
 GPIO.setup(pinAvooruit, GPIO.OUT)
 GPIO.setup(pinAachteruit, GPIO.OUT)
 GPIO.setup(pinBvooruit, GPIO.OUT)
 GPIO.setup(pinBachteruit, GPIO.OUT)
 
+'''Afstandssensor input en output'''
 GPIO.setup(echoOutput, GPIO.OUT)
 GPIO.setup(echoInput, GPIO.IN)
 
+'''Lichtsensor + ledjes'''
 GPIO.setup(lichtinput, GPIO.IN)
 GPIO.setup(led1, GPIO.OUT)
 GPIO.setup(led2, GPIO.OUT)
@@ -92,9 +94,7 @@ def Rechts():
 	pwmpinBachteruit.ChangeDutyCycle(DutyCycleB)
 #--------------------------------------
 '''Meting maken'''
-
-
-buffer = []
+buffer = [] #buffer aanmaken om het gemiddelde te kunnen bepalen
 
 def Meting():
 	global buffer
@@ -114,8 +114,8 @@ def Meting():
     	ElapsedTime = StopTime - StartTime
     	Afstand = (ElapsedTime * 34300)/2
 	
-	buffer.append(Afstand)
-	if (len(buffer) > 3):
+	buffer.append(Afstand) 
+	if (len(buffer) > 3): #bepalen van de hoeveelheid metingen die meegenomen worden in het gemiddelde
 		buffer.pop(0)
 	
 	total = 0
@@ -123,7 +123,7 @@ def Meting():
 		total += buffer[i]
 	
 	
-    	return total / len(buffer)
+    	return total / len(buffer) #return het gemiddelde
 #-------------------------------------
 '''Functie die true geeft als de sensor een 1 geeft'''
 def Dichtbij(localGrens_afstand):
@@ -162,7 +162,7 @@ def Uturn():
 #------------------------------------
 '''Witte stip vinden'''
 def RijdtoverZwart():
-	if GPIO.input(lichtinput) == 0:
+	if GPIO.input(lichtinput) == 0: 
 		print("Rijdt over zwart oppervlak")
 		return True
 	else:
@@ -181,16 +181,6 @@ def Sirene():
 	GPIO.output(led2, 0)
 	Links()
 #---------------------------------------
-'''Gevonden!
-def Gevonden():
-	if RijdtoverZwart == True:
-		Sirene()
-		
-		time.sleep(rondje_draaien)
-		Rechtdoor()
-		time.sleep(1)'''
-
-
 '''Try-line om de volgorde van handelen te vertellen'''
 try:
 	GPIO.output(echoOutput, False)
