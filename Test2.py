@@ -20,7 +20,7 @@ led2 = 23
 '''Frequentie van de wielen'''
 Frequency = 30
 '''Percentage dat de banden gebruikt worden'''
-DutyCycleA = 31
+DutyCycleA = 32
 DutyCycleB = 31
 Stop = float(0.0000000)
 #----------------------------------------
