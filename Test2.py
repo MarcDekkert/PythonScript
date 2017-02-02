@@ -120,7 +120,7 @@ def Meting():
 	
 	total = 0
 	for i in range(0, len(buffer)):
-		total += buffer.get(i)
+		total += buffer[i]
 	
 	
     	return total / len(buffer)
