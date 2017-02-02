@@ -16,10 +16,10 @@ echoInput = 18
 lichtinput = 25
 #----------------------------------------
 '''Frequentie van de wielen'''
-Frequency = 12
+Frequency = 50
 '''Percentage dat de banden gebruikt worden'''
-DutyCycleA = 26
-DutyCycleB = 35
+DutyCycleA = 31
+DutyCycleB = 30
 Stop = 0
 #----------------------------------------
 '''Set the GPIO Pin mode to be Output'''
@@ -176,7 +176,8 @@ try:
         time.sleep(0.1)
         if RijdtoverZwart():
             stop()
-            time.sleep(5)
+            Sirene()
+            stop()
         elif Dichtbij(Grens_afstand):
             stop()
             Uturn()
