@@ -1,7 +1,7 @@
 '''Libraries importeren'''
 import RPi.GPIO as GPIO 
 import time
-import threading
+import threading as Thread
 #-----------------------------------------
 '''GPIO Modes instellen'''
 GPIO.setmode(GPIO.BCM)
