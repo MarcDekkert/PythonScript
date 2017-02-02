@@ -184,7 +184,7 @@ try:
         counter+=1
         print "counter is nu 1 " + str(counter)
         if counter == 4:
-            print "HowNear before increment = " + str(Grens_afstand)
+        print "HowNear before increment = " + str(Grens_afstand)
             Grens_afstand+=5
             print "counter is nu 4 = HowNear+=1 " + str(counter)
             print "HowNear after increment = " + str(Grens_afstand)
@@ -198,5 +198,5 @@ try:
 
         time.sleep(0.50)
 except KeyboardInterrupt:
-    GPIO.cleanup()
+        GPIO.cleanup()
 
