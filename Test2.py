@@ -18,10 +18,10 @@ led1 = 22
 led2 = 23
 #----------------------------------------
 '''Frequentie van de wielen'''
-Frequency = 22
+Frequency = 24
 '''Percentage dat de banden gebruikt worden'''
-DutyCycleA = 27
-DutyCycleB = 28
+DutyCycleA = 31
+DutyCycleB = 30
 Stop = float(0.0000000)
 #----------------------------------------
 '''Set the GPIO Pin mode to be Output'''
