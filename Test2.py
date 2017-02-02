@@ -160,12 +160,12 @@ def Uturn():
     	stop()
 #------------------------------------
 '''Witte stip vinden'''
-def RijdtoverZwart():
-	if GPIO.input(lichtinput) == 0: 
-		print("Rijdt over zwart oppervlak")
+def RijdtoverWit():
+	if GPIO.input(lichtinput) == 1: 
+		print("Rijdt over wit oppervlak")
 		return True
 	else:
-		print("Rijdt over wit oppervlak")
+		print("Rijdt over zwart oppervlak")
 		return False
 #-------------------------------------
 '''Sirene maken'''
@@ -189,7 +189,7 @@ try:
     	while True:
 		Vooruit()
         	time.sleep(0.1)
-		if RijdtoverZwart():
+		if RijdtoverWit():
 			stop()
 			Sirene()
 			break
