@@ -159,7 +159,7 @@ def RijdtoverZwart():
 #-------------------------------------
 '''Sirene maken'''
 class sirene(Thread):
-	def Sirene():
+	def Sirene(self):
 		GPIO.output(led1, 1)
 		time.sleep(0.5)
 		GPIO.output(led1, 0)
