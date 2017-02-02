@@ -18,7 +18,7 @@ led1 = 22
 led2 = 23
 #----------------------------------------
 '''Frequentie van de wielen'''
-Frequency = 24
+Frequency = 26
 '''Percentage dat de banden gebruikt worden'''
 DutyCycleA = 32
 DutyCycleB = 30
